@@ -3,42 +3,62 @@
 @import "fonts/ravie.css";
 @import "fonts/verdana.css";
 
+:root {
+  --background-color: #fff;
+  --strong-color: #d027aa;
+  --background-color-image-1: #f6f1b2;
+  --background-color-image-2: #4599b2;
+  --background-color-cardapio: rgba(255, 255, 255, 0.2);
+  --border-recipiente-color: #d3d3d3;
+  --border-cardapio-color: #aac0ae;
+  --text-color: #333;
+  --cabecalho-color: #e90c0c;
+}
+
+/*...*/
+
+#cardapio article {
+  color: var(--cor-do-texto);
+}
+
 html {
   min-height: 100vh;
 }
 
 body {
   min-height: 100vh;
-  background-color: #fff;
+  background-color: var(--background-color);
   margin: 0;
+  font-family: 'Verdana', sans-serif;
 }
 
 strong {
-  color: #d027aa;
+  color: var(--strong-color);
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+  background-image: linear-gradient(to bottom, var(--background-color-image-1),var(--background-color-image-2) 80%);
+  border-left: 1px solid var(--border-recipiente-color);
+  border-right: 1px solid var(--border-recipiente-color);
 }
 
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 1px solid #aac0ae;
-  border-bottom: 1px solid #aac0ae;
-  border-left: 1px solid #aac0ae;
+  background-color: var(--background-color-cardapio);
+  border-top: 1px solid var(--border-cardapio-color);
+  border-bottom: 1px solid var(--border-cardapio-color);
+  border-left: 1px solid var(--border-cardapio-color);
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--text-color);
   margin-top: 30px;
+  font-family: "Verdana", "OpenSans", sans-serif;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--text-color);
 }
 
 
@@ -88,15 +108,16 @@ strong {
 #cabecalho-pagina h1 {
   margin: 0;
   font-size: 36px;
-  color: #e90c0c;
+  color: var(--cabecalho-color);
   font-weight: normal;
   text-align: center;
+  font-family: "Ravie", sans-serif;
 }
 
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
   font-weight: normal;
   text-align: right;
 }
@@ -160,4 +181,16 @@ article {
    as custom properties */
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
-
+   @media (prefers-color-scheme: dark) {
+    :root{
+      --background-color: #000;
+      --strong-color: #741660;
+      --background-color-image-1: #021235;
+      --background-color-image-2: #0e2a34;
+      --background-color-cardapio: #134659;
+      --border-recipiente-color: #808080;
+      --border-cardapio-color: #809183;
+      --text-color: #fff;
+      --cabecalho-color: #e90c0c;
+    }
+  }
